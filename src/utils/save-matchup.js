@@ -1,5 +1,5 @@
-export default async function saveManager(data) {
-  let response = await fetch('http://localhost:3001/api/managers', {
+export default async function saveMatchup(data) {
+  let response = await fetch('http://localhost:3001/api/matchups', {
     method: "POST",
     mode: "cors",
     cache: "no-cache",

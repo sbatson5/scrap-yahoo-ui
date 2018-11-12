@@ -1,6 +1,6 @@
-export default async function saveManager(data) {
+export default async function fetchAllManagers() {
   let response = await fetch('http://localhost:3001/api/managers', {
-    method: "POST",
+    method: "GET",
     mode: "cors",
     cache: "no-cache",
     credentials: "same-origin",
@@ -8,9 +8,8 @@ export default async function saveManager(data) {
       "Content-Type": "application/json; charset=utf-8",
     },
     redirect: "follow",
-    referrer: "no-referrer",
-    body: JSON.stringify(data)
+    referrer: "no-referrer"
   });
-  let manager = await response.json();
-  return manager;
+  let managers = await response.json();
+  return managers;
 }
