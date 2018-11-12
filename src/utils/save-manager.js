@@ -1,6 +1,7 @@
-export default async function fetchManager(managerId) {
-  let response = await fetch(`http://localhost:3001/api/managers/${managerId}`, {
-    method: "GET",
+export default async function fetchManager(data) {
+  console.log(JSON.stringify(data));
+  let response = await fetch('http://localhost:3001/api/managers', {
+    method: "POST",
     mode: "cors",
     cache: "no-cache",
     credentials: "same-origin",
@@ -8,7 +9,8 @@ export default async function fetchManager(managerId) {
       "Content-Type": "application/json; charset=utf-8",
     },
     redirect: "follow",
-    referrer: "no-referrer"
+    referrer: "no-referrer",
+    body: JSON.stringify(data)
   });
   let manager = await response.json();
   return manager;

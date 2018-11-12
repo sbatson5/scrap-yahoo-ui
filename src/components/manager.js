@@ -1,24 +1,29 @@
 import React, { useState } from 'react';
 import fetchManager from '../utils/fetch-manager';
+import ManagerCard from './manager-card';
+import NewManager from './new-manager';
 
-export default function example() {
+export default function manager() {
   const [user, setUser] = useState({});
+  const [managerId, setManagerId] = useState(0);
 
   const getManager = async function() {
-    let manager = await fetchManager(4)
+    let manager = await fetchManager(managerId)
     setUser(manager);
+  }
+
+  const updateManagerId = e => {
+    setManagerId(e.target.value)
   }
 
   return (
     <div>
+      <NewManager />
+      <input type="text" value={managerId} onChange={updateManagerId} />
       <button onClick={() => getManager()}>
         Get manager information
       </button>
-      <ul>
-        <li>{user.id}</li>
-        <li>{user.real_name}</li>
-        <li>{user.current_nickname}</li>
-      </ul>
+      <ManagerCard  user={user} />
     </div>
   );
 }
