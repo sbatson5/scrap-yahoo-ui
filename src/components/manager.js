@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import fetchManager from '../utils/fetch-manager';
+import fetchManagerById from '../utils/fetch-manager-by-id';
 import ManagerCard from './manager-card';
 import NewManager from './new-manager';
 
@@ -8,7 +8,7 @@ export default function manager() {
   const [managerId, setManagerId] = useState(0);
 
   const getManager = async function() {
-    let manager = await fetchManager(managerId)
+    let manager = await fetchManagerById(managerId)
     setUser(manager);
   }
 

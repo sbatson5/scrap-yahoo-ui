@@ -1,4 +1,4 @@
-export default async function fetchManager(managerId) {
+export default async function fetchManagerById(managerId) {
   let response = await fetch(`http://localhost:3001/api/managers/${managerId}`, {
     method: "GET",
     mode: "cors",
