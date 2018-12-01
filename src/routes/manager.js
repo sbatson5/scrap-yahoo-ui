@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import fetchManagerById from '../utils/fetch-manager-by-id';
-import ManagerCard from './manager-card';
+import ManagerCard from '../components/manager-card';
 import NewManager from './new-manager';
 
 export default function manager() {

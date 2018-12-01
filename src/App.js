@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Manager from './components/manager';
-import NewManager from './components/new-manager';
-import ViewManager from './components/view-manager';
-import CreateMatchup from './components/create-matchup';
+import NewManager from './routes/new-manager';
+import ViewManager from './routes/view-manager';
+import CreateMatchup from './routes/create-matchup';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
