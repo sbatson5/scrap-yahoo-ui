@@ -2,10 +2,9 @@ import React from 'react';
 
 export default function managerCard({ user }) {
   return (
-    <ul>
-      <li>{user.id}</li>
-      <li>{user.real_name}</li>
-      <li>{user.current_nickname}</li>
-    </ul>
+    <div>
+      <p>{user.real_name}</p>
+      <p>{user.current_nickname}</p>
+    </div>
   );
 }

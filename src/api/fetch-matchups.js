@@ -1,7 +1,9 @@
-export default async function fetchAllManagers(managerId) {
+export default async function fetchMatchups({ managerId, opponentId }) {
   let url = 'http://localhost:3001/api/matchups';
   if (managerId) {
     url = `${url}?manager_id=${managerId}`;
+  } else if (opponentId) {
+    url = `${url}?opponent_id=${opponentId}`;
   }
   let response = await fetch(url, {
     method: "GET",
