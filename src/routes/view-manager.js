@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import fetchManagerById from '../utils/fetch-manager-by-id';
-import fetchMatchups from '../utils/fetch-matchups';
-import fetchAllSeasons from '../utils/fetch-all-seasons';
+import fetchManagerById from '../api/fetch-manager-by-id';
+import fetchMatchups from '../api/fetch-matchups';
+import fetchAllSeasons from '../api/fetch-all-seasons';
+import { getAverageScore } from '../utils/matchup-scores';
 import ManagerCard from '../components/manager-card';
 import MatchupStats from '../components/matchup-stats';
 
@@ -47,6 +48,7 @@ export default function manager({ match }) {
       <ManagerCard user={user} />
       <p>Total Wins: {getWins()}</p>
       <p>Total Losses: {getLosses()}</p>
+      <p>Average Score: {getAverageScore(matchups)}</p>
       <h2>By season</h2>
       {seasons.map((season) => {
         return(

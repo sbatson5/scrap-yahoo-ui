@@ -1,4 +1,5 @@
 import React from 'react';
+import { getAverageScore } from '../utils/matchup-scores';
 
 export default function matchUpStats({ matchups }) {
 
@@ -23,6 +24,7 @@ export default function matchUpStats({ matchups }) {
       <p>Lowest Victory: {lowestVictory}</p>
       <p>Highest Loss: {highestLoss}</p>
       <p>Lowest Loss: {lowestLoss}</p>
+      <p>Average Score: {getAverageScore(matchups)}</p>
     </div>
   );
 }

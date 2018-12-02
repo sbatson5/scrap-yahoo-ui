@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import fetchAllManagers from '../utils/fetch-all-managers';
-import fetchAllSeasons from '../utils/fetch-all-seasons';
-import saveMatchup from '../utils/save-matchup';
+import fetchAllManagers from '../api/fetch-all-managers';
+import fetchAllSeasons from '../api/fetch-all-seasons';
+import saveMatchup from '../api/save-matchup';
 import ManagerCard from '../components/manager-card';
 import NewManager from './new-manager';
 
