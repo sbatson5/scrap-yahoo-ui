@@ -53,6 +53,8 @@ export default function manager({ match }) {
     <div>
       <ManagerCard user={user} />
       <h2>Overall</h2>
+      <p>Wins: {getWins()}</p>
+      <p>Losses: {getLosses()}</p>
       <MatchupStats matchups={matchups} />
       <h2>By season</h2>
       {seasons.map((season) => {
