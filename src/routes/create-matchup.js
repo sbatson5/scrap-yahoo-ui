@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import fetchAllManagers from '../api/fetch-all-managers';
 import fetchAllSeasons from '../api/fetch-all-seasons';
 import saveMatchup from '../api/save-matchup';
-import ManagerCard from '../components/manager-card';
-import NewManager from './new-manager';
 
 export default function manager() {
   const [managers, setManagers] = useState([]);
@@ -29,12 +27,6 @@ export default function manager() {
     e.preventDefault();
     saveMatchup(matchup);
   };
-
-  const setSeason = function(event) {
-    let seasonHash = { season_id: event.target.value }
-    Object.assign(matchup, seasonHash);
-    setMatchup(matchup);
-  }
 
   const updateMatchup = function({ target }) {
     let hash = {};

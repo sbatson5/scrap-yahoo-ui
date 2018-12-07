@@ -4,6 +4,7 @@ import fetchMatchups from '../api/fetch-matchups';
 import fetchAllSeasons from '../api/fetch-all-seasons';
 import ManagerCard from '../components/manager-card';
 import MatchupStats from '../components/matchup-stats';
+import RivalsCard from '../components/rivals-card';
 
 export default function manager({ match }) {
   const [user, setUser] = useState({});
@@ -56,6 +57,7 @@ export default function manager({ match }) {
       <p>Wins: {getWins()}</p>
       <p>Losses: {getLosses()}</p>
       <MatchupStats matchups={matchups} />
+      <RivalsCard matchups={matchups} />
       <h2>By season</h2>
       {seasons.map((season) => {
         return(
