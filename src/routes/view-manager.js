@@ -51,24 +51,27 @@ export default function manager({ match }) {
   }
 
   return (
-    <div>
-      <ManagerCard user={user} />
-      <h2>Overall</h2>
-      <p>Wins: {getWins()}</p>
-      <p>Losses: {getLosses()}</p>
-      <MatchupStats matchups={matchups} />
-      <RivalsCard matchups={matchups} />
-      <h2>By season</h2>
-      {seasons.map((season) => {
-        return(
-          <div key={season.id}>
-            <h3>{season.year}</h3>
-            <p>Wins: {getWins(season.id)}</p>
-            <p>Losses: {getLosses(season.id)}</p>
-            <MatchupStats matchups={matchupsBySeason(season.id)} />
-          </div>
-        )
-      })}
+    <div class="manager-container">
+      <div class="full-width-manager">
+        <ManagerCard user={user} />
+        <h2>Overall</h2>
+        <p>Wins: {getWins()}</p>
+        <p>Losses: {getLosses()}</p>
+        <MatchupStats matchups={matchups} />
+        <RivalsCard matchups={matchups} />
+      </div>
+      <section class="seasons">
+        {seasons.map((season) => {
+          return(
+            <div key={season.id} class="card manager-card">
+              <h3>{season.year}</h3>
+              <p>Wins: {getWins(season.id)}</p>
+              <p>Losses: {getLosses(season.id)}</p>
+              <MatchupStats matchups={matchupsBySeason(season.id)} />
+            </div>
+          )
+        })}
+      </section>
     </div>
   );
 }

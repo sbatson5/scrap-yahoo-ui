@@ -10,7 +10,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div className="App container">
           <Route path="/" exact component={Index} />
           <Route path="/new-manager" exact component={NewManager} />
           <Route path="/view-manager/:id" component={ViewManager} />

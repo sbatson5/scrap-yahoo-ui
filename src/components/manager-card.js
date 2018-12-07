@@ -3,8 +3,8 @@ import React from 'react';
 export default function managerCard({ user }) {
   return (
     <div>
-      <p>{user.real_name}</p>
-      <p>{user.current_nickname}</p>
+      <h1>{user.real_name}</h1>
+      <h2>{user.current_nickname}</h2>
     </div>
   );
 }

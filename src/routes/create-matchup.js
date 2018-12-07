@@ -46,55 +46,69 @@ export default function manager() {
         <li>victory: {matchup.victory}</li>
       </ul>
       <form onSubmit={submit}>
-        <label>Season
-          <select name="season_id" value={matchup.seasonId} onChange={updateMatchup}>
-            <option selected disabled>-- Select Season --</option>
-            {seasons.map((season) => {
-              return <option value={season.id} key={season.id}>{season.year}</option>;
-            })}
-          </select>
-        </label>
 
-        <label>Manager
-          <select name="manager_id" value={matchup.manager_id} onChange={updateMatchup}>
-            <option selected disabled>-- Select Manager --</option>
-            {managers.map((manager) => {
-              return <option value={manager.id} key={manager.id}>{manager.real_name}</option>;
-            })}
-          </select>
-        </label>
+        <div class="form-group">
+          <label>Season
+            <select class="form-control" name="season_id" value={matchup.seasonId} onChange={updateMatchup}>
+              <option selected disabled>-- Select Season --</option>
+              {seasons.map((season) => {
+                return <option value={season.id} key={season.id}>{season.year}</option>;
+              })}
+            </select>
+          </label>
+        </div>
 
-        <label>Opponent
-          <select name="opponent_id" value={matchup.opponent_id} onChange={updateMatchup}>
-            <option selected disabled>-- Select Manager --</option>
-            {managers.map((manager) => {
-              return <option value={manager.id} key={manager.id}>{manager.real_name}</option>;
-            })}
-          </select>
-        </label>
+        <div class="form-group">
+          <label>Manager
+            <select class="form-control" name="manager_id" value={matchup.manager_id} onChange={updateMatchup}>
+              <option selected disabled>-- Select Manager --</option>
+              {managers.map((manager) => {
+                return <option value={manager.id} key={manager.id}>{manager.real_name}</option>;
+              })}
+            </select>
+          </label>
+        </div>
 
-        <label>Week
-          <select name="week" value={matchup.week} onChange={updateMatchup}>
-            <option selected disabled>-- Select Week --</option>
-            {weeks.map((week, index) => {
-              return <option value={week} key={index}>{week}</option>;
-            })}
-          </select>
-        </label>
+        <div class="form-group">
+          <label>Opponent
+            <select class="form-control" name="opponent_id" value={matchup.opponent_id} onChange={updateMatchup}>
+              <option selected disabled>-- Select Manager --</option>
+              {managers.map((manager) => {
+                return <option value={manager.id} key={manager.id}>{manager.real_name}</option>;
+              })}
+            </select>
+          </label>
+        </div>
 
-        <label>Score
-          <input name="score" type="text" value={matchup.score} onChange={updateMatchup} />
-        </label>
+        <div class="form-group">
+          <label>Week
+            <select class="form-control" name="week" value={matchup.week} onChange={updateMatchup}>
+              <option selected disabled>-- Select Week --</option>
+              {weeks.map((week, index) => {
+                return <option value={week} key={index}>{week}</option>;
+              })}
+            </select>
+          </label>
+        </div>
 
-        <label>Victory?
-        <input
-          name="victory"
-          type="checkbox"
-          checked={matchup.victory}
-          onChange={updateMatchup} />
-        </label>
+        <div class="form-group">
+          <label>Score
+            <input name="score" type="text" class="form-control" value={matchup.score} onChange={updateMatchup} />
+          </label>
+        </div>
 
-        <input type="submit" value="Submit" />
+        <div class="form-group">
+          <input
+            name="victory"
+            type="checkbox"
+            class="form-check-input"
+            id="victory"
+            checked={matchup.victory}
+            onChange={updateMatchup} />
+            <label class="form-check-label" for="victory">Victory?</label>
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary" />
       </form>
     </div>
   );
