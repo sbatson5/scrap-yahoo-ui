@@ -52,8 +52,8 @@ export default function rivalsCard({ matchups }) {
 
   return (
     <div>
-      <p>Most beaten opponent: {mostBeaten.real_name}</p>
-      <p>Lost to most: {mostLost.real_name}</p>
+      <p>Most beaten opponent: {mostBeaten.real_name} (wins: {beaten[0].count})</p>
+      <p>Lost to most: {mostLost.real_name} (losses: {lost[0].count})</p>
     </div>
   );
 }
