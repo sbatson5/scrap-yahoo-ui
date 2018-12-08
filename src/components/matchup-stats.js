@@ -10,7 +10,7 @@ import {
 export default function matchUpStats({ matchups }) {
 
   return (
-    <div class="card-body">
+    <div className="card-body">
       <p>Highest Victory: {getHighestVictory(matchups)}</p>
       <p>Lowest Victory: {getLowestVictory(matchups)}</p>
       <p>Highest Loss: {getHighestLoss(matchups)}</p>

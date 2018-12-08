@@ -45,7 +45,7 @@ export default function manager({ match }) {
         <ManagerDropdown managers={managers} label="Second" name="second_id" value={season.second} onChange={updateSeason} />
         <ManagerDropdown managers={managers} label="Third" name="third_id" value={season.third} onChange={updateSeason} />
         <ManagerDropdown managers={managers} label="Fourth" name="fourth_id" value={season.fourth} onChange={updateSeason} />
-        <input type="submit" value="Submit" class="btn btn-primary" />
+        <input type="submit" value="Submit" className="btn btn-primary" />
       </form>
     </div>
   );

@@ -22,6 +22,9 @@ export default function manager({ match }) {
     setMatchups(matchups);
   }
 
+  const matchupSeasons = matchups.map((matchup) => matchup.season_id);
+  const uniqueMatchupSeasons = [...new Set(matchupSeasons)];
+
   const getMatchupsAsOpponent = async function() {
     let matchups = await fetchMatchups({ opponentId: user.id });
     setMatchupsAsOpponent(matchups);
@@ -29,6 +32,7 @@ export default function manager({ match }) {
 
   const getSeasons = async function() {
     let seasons = await fetchAllSeasons();
+    seasons = seasons.filter((season) => uniqueMatchupSeasons.includes(season.id))
     setSeasons(seasons);
   }
 
@@ -51,8 +55,8 @@ export default function manager({ match }) {
   }
 
   return (
-    <div class="manager-container">
-      <div class="full-width-manager">
+    <div className="manager-container">
+      <div className="full-width-manager">
         <ManagerCard user={user} />
         <h2>Overall</h2>
         <p>Wins: {getWins()}</p>
@@ -60,10 +64,10 @@ export default function manager({ match }) {
         <MatchupStats matchups={matchups} />
         <RivalsCard matchups={matchups} />
       </div>
-      <section class="seasons">
+      <section className="seasons">
         {seasons.map((season) => {
           return(
-            <div key={season.id} class="card manager-card">
+            <div key={season.id} className="card manager-card">
               <h3>{season.year}</h3>
               <p>Wins: {getWins(season.id)}</p>
               <p>Losses: {getLosses(season.id)}</p>
