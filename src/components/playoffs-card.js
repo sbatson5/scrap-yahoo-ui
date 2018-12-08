@@ -5,7 +5,7 @@ export default function playoffsCard({ seasons, managers }) {
   let playoffManagers = seasons
   .map((season) => {
     let { first_id, second_id, third_id, fourth_id } = season;
-    return [first_id, second_id, third_id, fourth_id]
+    return [first_id, second_id, third_id, fourth_id].filter((id) => id);
   })
   .flat()
   .reduce(buildManagerCollection, [])
@@ -19,7 +19,7 @@ export default function playoffsCard({ seasons, managers }) {
 
   return (
     <div className="card-body">
-      <h2>Playoff Managers</h2>
+      <h2>Who made the playoffs?</h2>
       <ul>
       {playoffManagers.map((playoffManager) => {
         return (
