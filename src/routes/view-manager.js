@@ -32,7 +32,9 @@ export default function manager({ match }) {
 
   const getSeasons = async function() {
     let seasons = await fetchAllSeasons();
-    seasons = seasons.filter((season) => uniqueMatchupSeasons.includes(season.id));
+    seasons = seasons
+      .filter((season) => uniqueMatchupSeasons.includes(season.id))
+      .sort((a, b) => b.year - a.year);
     setSeasons(seasons);
   }
 
