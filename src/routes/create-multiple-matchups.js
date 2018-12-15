@@ -16,7 +16,7 @@ export default function manager() {
   const startingMatchups = [{},{},{},{},{},{}];
   const [matchupCollection, setMatchupCollection] = useState(startingMatchups);
 
-  const weeks = [1,2,3,4,5,6,7,8,9,10,11,12,13,14];
+  const weeks = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
 
   const getManagers = async function() {
     let managers = await fetchAllManagers();
@@ -25,6 +25,7 @@ export default function manager() {
 
   const getSeasons = async function() {
     let seasons = await fetchAllSeasons();
+    seasons = seasons.sort((a, b) => b.year - a.year);
     setSeasons(seasons);
   }
 

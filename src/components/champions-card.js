@@ -3,6 +3,7 @@ import buildManagerCollection from '../utils/build-manager-collection';
 
 export default function championCard({ seasons, managers }) {
   const champions = (seasons || [])
+    .filter((season) => !!season.first_id)
     .map((season) => season.first_id)
     .reduce(buildManagerCollection, [])
     .sort((a, b) => b.count - a.count);
