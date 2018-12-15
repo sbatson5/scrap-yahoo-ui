@@ -11,12 +11,12 @@ export default function manager({ match }) {
   const getManagers = async function() {
     let managers = await fetchAllManagers();
     setManagers(managers);
-  }
+  };
 
   const getSeason = async function() {
     let season = await fetchSeasonById(match.params.id);
     setSeason(season);
-  }
+  };
 
   if (managers.length < 1) getManagers();
   if (!season.id) getSeason();
@@ -27,7 +27,7 @@ export default function manager({ match }) {
     hash[name] = value;
     Object.assign(season, hash);
     setSeason(season);
-  }
+  };
 
   const submit = function(e) {
     e.preventDefault();
@@ -35,7 +35,7 @@ export default function manager({ match }) {
   };
 
   if (!season.year) {
-    return (<h1>No Season found</h1>)
+    return (<h1>No Season found</h1>);
   }
   return (
     <div>

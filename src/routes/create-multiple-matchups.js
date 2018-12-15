@@ -21,13 +21,13 @@ export default function manager() {
   const getManagers = async function() {
     let managers = await fetchAllManagers();
     setManagers(managers);
-  }
+  };
 
   const getSeasons = async function() {
     let seasons = await fetchAllSeasons();
     seasons = seasons.sort((a, b) => b.year - a.year);
     setSeasons(seasons);
-  }
+  };
 
   if (managers.length < 1) getManagers();
   if (seasons.length < 1) getSeasons();
@@ -36,7 +36,6 @@ export default function manager() {
     e.preventDefault();
     matchupCollection.forEach((matchup) => {
       if (dataIncomplete(matchup) || (!season || !week)) {
-        console.log('hi');
         return;
       }
       let winner = {

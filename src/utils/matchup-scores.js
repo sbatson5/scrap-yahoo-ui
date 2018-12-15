@@ -50,6 +50,31 @@ function sortMatchupsByScore(matchups) {
   return matchups.sort((a, b) => a.score - b.score);
 }
 
+function getLongestStreak(matchupsBySeason, isVictory = true) {
+  let longestStreak = 0;
+
+  matchupsBySeason.forEach((matchups) => {
+    let highestCount = 0;
+    let currentCount = 0;
+    
+    matchups.sort((a, b) => a.week - b.week).forEach((matchup) => {
+      if (matchup.victory === isVictory) {
+        currentCount++;
+      } else {
+        if (highestCount < currentCount) highestCount = currentCount;
+        currentCount = 0;
+      }
+      if (highestCount < currentCount) {
+        highestCount = currentCount;
+      }
+    });
+    if (highestCount > longestStreak) {
+      longestStreak = highestCount;
+    }
+  });
+  return longestStreak;
+}
+
 export {
   getAverageScore,
   mapScores,
@@ -57,5 +82,6 @@ export {
   getHighestVictory,
   getHighestLoss,
   getLowestVictory,
-  getLowestLoss
+  getLowestLoss,
+  getLongestStreak
 };

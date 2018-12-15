@@ -12,12 +12,12 @@ export default function index() {
   const getManagers = async function() {
     let manager = await fetchManagerAllManagers()
     setManagers(manager);
-  }
+  };
 
   const getSeasons = async function() {
     let seasons = await fetchAllSeasons();
     setSeasons(seasons);
-  }
+  };
 
   if (managers.length < 1) getManagers();
   if (seasons.length < 1) getSeasons();

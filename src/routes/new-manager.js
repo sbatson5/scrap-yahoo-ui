@@ -12,7 +12,7 @@ export default function newManager() {
     let updatedInfo = {};
     updatedInfo[target.name] = target.value;
     setUser(Object.assign(user, updatedInfo));
-  }
+  };
 
   return (
     <div>

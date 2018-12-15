@@ -10,11 +10,11 @@ export default function manager() {
   const getManager = async function() {
     let manager = await fetchManagerById(managerId)
     setUser(manager);
-  }
+  };
 
   const updateManagerId = e => {
     setManagerId(e.target.value)
-  }
+  };
 
   return (
     <div>

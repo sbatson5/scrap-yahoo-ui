@@ -13,12 +13,12 @@ export default function manager() {
   const getManagers = async function() {
     let managers = await fetchAllManagers();
     setManagers(managers);
-  }
+  };
 
   const getSeasons = async function() {
     let seasons = await fetchAllSeasons();
     setSeasons(seasons);
-  }
+  };
 
   if (managers.length < 1) getManagers();
   if (seasons.length < 1) getSeasons();
@@ -34,7 +34,7 @@ export default function manager() {
     hash[target.name] = value;
     Object.assign(matchup, hash);
     setMatchup(matchup);
-  }
+  };
 
   return (
     <div>
