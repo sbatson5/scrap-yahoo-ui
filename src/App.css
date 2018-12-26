@@ -11,3 +11,7 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.chart-wrapper {
+  max-height: 300px;
+}

@@ -4,6 +4,7 @@ import fetchMatchups from '../api/fetch-matchups';
 import fetchAllSeasons from '../api/fetch-all-seasons';
 import ManagerCard from '../components/manager-card';
 import MatchupStats from '../components/matchup-stats';
+import MatchupChart from '../components/matchup-chart';
 import RivalsCard from '../components/rivals-card';
 import { getLongestStreak } from '../utils/matchup-scores';
 
@@ -77,6 +78,7 @@ export default function manager({ match }) {
         <MatchupStats matchups={matchups} />
         <RivalsCard matchups={matchups} />
       </div>
+      <MatchupChart matchupsBySeason={matchupsBySeason} seasons={seasons} />
       <section className="seasons">
         {seasons.map((season, index) => {
           return(
